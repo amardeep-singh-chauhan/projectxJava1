@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProjectxApplication implements CommandLineRunner {
 
     @Autowired
-    DB db;
+    private DB db;
 
     public static void main(String[] args) {
         SpringApplication.run(ProjectxApplication.class, args);
