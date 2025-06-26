@@ -4,7 +4,7 @@ import com.amardeep.projectx.interfaces.DB;
 
 public class ProdDB implements DB {
 
-    public String getData(){
+    public String getData() {
         return "Prod Data";
     }
 }

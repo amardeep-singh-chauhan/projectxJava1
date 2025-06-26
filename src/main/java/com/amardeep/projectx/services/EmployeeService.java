@@ -21,8 +21,7 @@ public class EmployeeService {
     }
 
     public EmployeeDTO getEmployeeById(Long id) {
-        EmployeeEntity employeeEntity = employeeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+        EmployeeEntity employeeEntity = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
 
 //          return new EmployeeDTO(employeeEntity.getId(), employeeEntity.getName(), employeeEntity.getDateOfJoining(), employeeEntity.isActive());
 //          return modelMapper.map(employeeEntity, EmployeeDTO.class);
@@ -36,9 +35,7 @@ public class EmployeeService {
 
     public List<EmployeeDTO> getAllEmployees() {
         List<EmployeeEntity> employeeEntities = employeeRepository.findAll();
-        return employeeEntities.stream()
-                .map(EmployeeDTO::getDetailDTO)
-                .collect(Collectors.toList());
+        return employeeEntities.stream().map(EmployeeDTO::getDetailDTO).collect(Collectors.toList());
     }
 
     public void deleteEmployee(Long id) {
